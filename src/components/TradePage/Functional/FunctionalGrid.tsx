@@ -6,12 +6,19 @@ import DealButton from "./FuncComponents/DealButton";
 import OfferButton from "./FuncComponents/OfferButton";
 import FuncHeader from "./FuncComponents/FuncHeader";
 
-const FunctionalGrid: React.FC = () => {
+interface prop {
+  pair: string;
+  price: number;
+}
+
+const FunctionalGrid: React.FC<prop> = (props: prop) => {
+  const { pair, price } = props;
+
   const [dealType, setDealType] = React.useState<string | null>("buy");
 
   return (
     <Stack spacing={3}>
-      <FuncHeader />
+      <FuncHeader pair={pair!} price={price!} />
 
       <DealButton dealType={dealType!} setDealType={setDealType} />
       <AmountField />

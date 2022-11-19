@@ -77,24 +77,24 @@ export const ChartComponent: React.FC<ChartComponentProps> = (props) => {
     }
 
     const lineWidth = 2;
-    const minPriceLine: any = {
+    /* const minPriceLine: any = {
       price: minimumPrice,
       color: theme.palette.error.main,
       lineWidth: lineWidth,
       lineStyle: 2, // LineStyle.Dashed
       axisLabelVisible: true,
       title: "sell",
-    };
+    };*/
     const maxPriceLine: any = {
       price: maximumPrice,
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.main,
       lineWidth: lineWidth,
       lineStyle: 2, // LineStyle.Dashed
       axisLabelVisible: true,
-      title: "bought",
+      title: "All time hight",
     };
     newSeries.createPriceLine(maxPriceLine);
-    newSeries.createPriceLine(minPriceLine);
+    //newSeries.createPriceLine(minPriceLine);
 
     /*const symbolName = "USD & RUB:";
     const container = chartContainerRef.current;

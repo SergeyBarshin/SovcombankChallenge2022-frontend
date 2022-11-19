@@ -8,7 +8,7 @@ const List: React.FC = () => {
     <Box>
       <RouterLink
         style={{ color: "inherit", textDecoration: "inherit" }}
-        to="trade"
+        to="trade/btc-usd"
       >
         <Link
           variant="button"
@@ -21,7 +21,7 @@ const List: React.FC = () => {
       </RouterLink>
       <RouterLink
         style={{ color: "inherit", textDecoration: "inherit" }}
-        to="trade"
+        to="/profile"
       >
         <Link
           variant="button"
@@ -32,10 +32,7 @@ const List: React.FC = () => {
           Profile
         </Link>
       </RouterLink>
-      <RouterLink
-        style={{ color: "inherit", textDecoration: "inherit" }}
-        to="trade"
-      >
+      <RouterLink style={{ color: "inherit", textDecoration: "inherit" }} to="">
         <Link
           variant="button"
           color="text.primary"

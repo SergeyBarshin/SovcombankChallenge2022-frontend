@@ -8,7 +8,7 @@ const AmountField: React.FC = () => {
         label="Amount"
         fullWidth
         variant="outlined"
-        helperText="Available Balance: 1000 RUB"
+        helperText="Available Balance: 1000 USD"
       />
     </div>
   );
