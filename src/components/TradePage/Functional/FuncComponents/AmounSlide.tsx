@@ -44,7 +44,7 @@ const AmounSlide: React.FC = () => {
   return (
     <Box>
       <Slider
-        defaultValue={30}
+        defaultValue={0}
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         step={1}

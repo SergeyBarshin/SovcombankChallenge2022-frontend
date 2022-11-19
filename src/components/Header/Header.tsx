@@ -1,18 +1,30 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
-
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import { Box } from "@mui/system";
 import { Link as RouterLink } from "react-router-dom";
 import List from "./List";
+import { IconButton, Box } from "@mui/material";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import { useNavigate } from "react-router-dom";
 
-const Header: React.FC = () => {
+interface prop {
+  dark: boolean;
+  setDark: Dispatch<SetStateAction<boolean>>;
+}
+
+const Header: React.FC<prop> = (props: prop) => {
+  const { dark, setDark } = props;
   const theme = useTheme();
 
+  const changeTheme = (): void => {
+    setDark(!dark);
+  };
+  const navigate = useNavigate();
   return (
     <AppBar
       position="static"
@@ -39,15 +51,41 @@ const Header: React.FC = () => {
           </RouterLink>
         </Typography>
 
-        <Box sx={{ paddingX: 4 }}>
+        <Box sx={{ paddingX: 2 }}>
           <List />
         </Box>
 
+        <Box sx={{ paddingRight: 3 }}>
+          <IconButton
+            aria-label="delete"
+            sx={{ borderRadius: 2 }}
+            onClick={changeTheme}
+          >
+            {dark === true ? (
+              <DarkModeOutlinedIcon />
+            ) : (
+              <LightModeOutlinedIcon />
+            )}
+          </IconButton>
+        </Box>
+
         <ButtonGroup disableElevation>
-          <Button href="auth" variant="outlined">
+          <Button
+            href=""
+            variant="outlined"
+            onClick={() => {
+              navigate("signIn");
+            }}
+          >
             Login
           </Button>
-          <Button href="auth" variant="contained">
+          <Button
+            href=""
+            variant="contained"
+            onClick={() => {
+              navigate("signUp");
+            }}
+          >
             Registration
           </Button>
         </ButtonGroup>

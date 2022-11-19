@@ -29,7 +29,7 @@ const List: React.FC = () => {
           underline="none"
           sx={{ my: 1, mx: 1.5 }}
         >
-          Wallet
+          Profile
         </Link>
       </RouterLink>
       <RouterLink
@@ -42,7 +42,7 @@ const List: React.FC = () => {
           underline="none"
           sx={{ my: 1, mx: 1.5 }}
         >
-          Trade
+          About
         </Link>
       </RouterLink>
     </Box>

@@ -4,26 +4,36 @@ import Grid from "@mui/material/Grid";
 import FunctionalContainer from "./Functional/FunctionalContainer";
 import TradeInformation from "./Chart/TradeInformation";
 import PaperCard from "./PaperCard";
+import History from "./History/History";
+import Slide from "@mui/material/Slide";
 
 const TradePageContainer: React.FC = () => {
   return (
-    <Box sx={{ paddingY: 8 }}>
+    <Box>
       <Grid container spacing={4}>
-        <Grid item xs={8}>
-          <TradeInformation />
-        </Grid>
+        <Slide in={true} direction="up" timeout={250}>
+          <Grid item xs={8}>
+            <TradeInformation />
+          </Grid>
+        </Slide>
 
-        <Grid item xs={4}>
-          <FunctionalContainer />
-        </Grid>
+        <Slide in={true} direction="up" timeout={250}>
+          <Grid item xs={4}>
+            <FunctionalContainer />
+          </Grid>
+        </Slide>
 
-        <Grid item xs={8}>
-          <PaperCard childComp={<h3> Тут инфа о истории </h3>} />
-        </Grid>
+        <Slide in={true} direction="up" timeout={250}>
+          <Grid item xs={8}>
+            <History />
+          </Grid>
+        </Slide>
 
-        <Grid item xs={4}>
-          <PaperCard childComp={<h3> Выбор пары </h3>} />
-        </Grid>
+        <Slide in={true} direction="up" timeout={250}>
+          <Grid item xs={4}>
+            <PaperCard childComp={<h3> Выбор пары </h3>} />
+          </Grid>
+        </Slide>
       </Grid>
     </Box>
   );
