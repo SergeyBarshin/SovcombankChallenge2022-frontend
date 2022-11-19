@@ -1,12 +1,12 @@
 import React from "react";
 import PaperCard from "../PaperCard";
-import Box from "@mui/material/Box";
-
-const FunctionalContainer = () => {
+import FunctionalGrid from "./FunctionalGrid";
+import { Box } from "@mui/material";
+const FunctionalContainer: React.FC = () => {
   return (
-    <div>
-      <PaperCard childComp={<Box>Тут функционал обменов</Box>} />
-    </div>
+    <Box sx={{ height: "100%" }}>
+      <PaperCard childComp={<FunctionalGrid />} />
+    </Box>
   );
 };
 

@@ -9,10 +9,7 @@ const PaperCard: React.FC<PaperCardProps> = (props) => {
   const { childComp } = props;
 
   return (
-    <Paper elevation={2} sx={{ padding: 2 }}>
-      {childComp}
-    </Paper>
+    <Paper sx={{ padding: 3, height: "100%", boxShadow: 4 }}>{childComp}</Paper>
   );
 };
-
 export default PaperCard;

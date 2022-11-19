@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           <List />
         </Box>
 
-        <ButtonGroup>
+        <ButtonGroup disableElevation>
           <Button href="auth" variant="outlined">
             Login
           </Button>

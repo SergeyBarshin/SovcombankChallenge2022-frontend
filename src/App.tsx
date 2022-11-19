@@ -1,21 +1,18 @@
-//import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/system";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { Container, CssBaseline } from "@mui/material/";
 import Header from "./components/Header/Header";
 import TradePageContainer from "./components/TradePage/TradePageContainer";
-
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
+import { darkTheme } from "./theme/darkTheme";
+import { lightTheme } from "./theme/lightTheme";
 
 function App() {
+  const [dark, setDark] = useState(true);
   return (
     <Box>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={dark ? darkTheme : lightTheme}>
         <CssBaseline />
         <BrowserRouter>
           <Header />
