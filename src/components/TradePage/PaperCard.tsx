@@ -10,7 +10,6 @@ const PaperCard: React.FC<PaperCardProps> = (props) => {
 
   return (
     <Paper elevation={2} sx={{ padding: 2 }}>
-      {" "}
       {childComp}
     </Paper>
   );
