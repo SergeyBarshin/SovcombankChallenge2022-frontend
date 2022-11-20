@@ -3,47 +3,42 @@ import React from "react";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 90 },
   {
-    field: "firstName",
-    headerName: "First name",
-    width: 150,
+    field: "date",
+    headerName: "Date",
+    flex: 1,
     editable: true,
   },
   {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
+    field: "currency",
+    headerName: "Currency",
+    flex: 1,
     editable: true,
   },
   {
-    field: "age",
-    headerName: "Age",
-    type: "number",
-    width: 110,
+    field: "amount",
+    headerName: "Amount",
+    flex: 0.3,
     editable: true,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    field: "price",
+    headerName: "Price",
+    flex: 1,
+    editable: true,
   },
 ];
 
 const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+  { id: 1, date: "2000/10/25", currency: "BTC", amount: 35, price: 16000 },
+  { id: 2, date: "2000/10/25", currency: "BTC", amount: 42, price: 16000 },
+  { id: 3, date: "2000/10/25", currency: "ETH", amount: 45, price: 1400 },
+  { id: 4, date: "2000/10/25", currency: "BTC", amount: 16, price: 16000 },
+  { id: 5, date: "2000/10/25", currency: "ETH", amount: 35, price: 1400 },
+  { id: 6, date: "2000/10/25", currency: "ETH", amount: 150, price: 1400 },
+  { id: 7, date: "2000/10/25", currency: "BTC", amount: 44, price: 16000 },
+  { id: 8, date: "2000/10/25", currency: "BTC", amount: 36, price: 16000 },
+  { id: 9, date: "2000/10/25", currency: "ETH", amount: 65, price: 1400 },
 ];
 
 const HistoryGrid = () => {

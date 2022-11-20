@@ -37,7 +37,12 @@ const Header: React.FC<prop> = (props: prop) => {
       }}
     >
       <Toolbar sx={{ flexWrap: "wrap" }}>
-        <Typography variant="h3" noWrap sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h3"
+          color="text.secondary"
+          noWrap
+          sx={{ flexGrow: 1 }}
+        >
           <RouterLink
             to="/"
             style={{ color: "inherit", textDecoration: "inherit" }}
